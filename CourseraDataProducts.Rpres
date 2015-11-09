@@ -1,10 +1,12 @@
 CourseraDataProducts
 ========================================================
 author: 
-date: 
+date:
+transition: rotate
 
-First Slide
+Coursera Developing Data Products Project
 ========================================================
+incremental: true
 
 For more details on authoring R presentations click the
 **Help** button on the toolbar.

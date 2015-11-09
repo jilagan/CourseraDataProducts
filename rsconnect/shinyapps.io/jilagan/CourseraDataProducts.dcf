@@ -1,7 +1,8 @@
 name: CourseraDataProducts
 account: jilagan
 server: shinyapps.io
-appId: 67795
-bundleId: 306468
+bundleId: 307325
 url: https://jilagan.shinyapps.io/CourseraDataProducts
-when: 1446993249.30654
+when: 1447110505.39425
+asMultiple: FALSE
+asStatic: FALSE
