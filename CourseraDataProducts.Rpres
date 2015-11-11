@@ -1,42 +1,54 @@
-CourseraDataProducts
+Metro Manila Population (Coursera Data Product Project Assignment)
 ========================================================
 author: 
 date:
 transition: rotate
 
-Coursera Developing Data Products Project
-========================================================
-incremental: true
-
-For more details on authoring R presentations click the
-**Help** button on the toolbar.
-
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-Slide With Code
+Metro Manila Cities and Population
 ========================================================
 
-```{r}
-summary(cars)
+```{r echo=FALSE, out.width="896px", out.height="512px"}
+library(ggplot2)
+library(scales)
+population<-read.csv("population.csv")
+ggplot(data=population,aes(x=city, y=total/1000, fill=total/1000)) +
+    geom_bar(stat="identity") +
+    ylab("Population Total (in thousands)") +
+    xlab("City") +
+    # scale_fill_continuous(name="Total (in Thousands)",label=comma) +
+    scale_y_continuous(labels=comma) +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1),
+          legend.position = "none")
 ```
 
-Slide With Plot
+Population Table
 ========================================================
 
 ```{r, echo=FALSE}
-plot(cars)
+library(knitr)
+formatted.population <- population
+colnames(formatted.population) <- c("ID","City","Total")
+formatted.population
+
 ```
 
-Fourth Slide
+Metro Manila (Philippines) Population, as of 2010
 ========================================================
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+_Select cities on the left to render on the map_
 
-Fifth Slide
+![Screenshot of Shiny App](shinyappscreengrab.png)
+
+
+Shiny App Highlights
+========================================================
+incremental: true
+
+- Uses the R Leaflet Library
+- Computes center of map image based on the selected city polygon coordinates
+- Uses reactive functions to minimize server resources
+
+Final
 ========================================================
 
 # Thank you!
